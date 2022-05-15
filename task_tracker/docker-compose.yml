@@ -5,9 +5,6 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-#      args:
-#        - DOCKER_REGISTRY=registry.sberautotech.ru:5574/infra/docker
-#        - ENVIRONMENT=dev
     restart: always
     volumes:
       - .:/code
