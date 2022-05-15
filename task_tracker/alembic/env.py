@@ -23,7 +23,6 @@ if config.config_file_name is not None:
 # target_metadata = mymodel.Base.metadata
 from app.config import settings
 from app.models import Base
-from app import models # noqa
 
 # async_fallback=true для корректной работы alembic
 config.set_main_option('sqlalchemy.url', str(settings.DB_DSN)+"?async_fallback=true")
