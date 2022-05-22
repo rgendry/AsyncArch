@@ -63,3 +63,19 @@ class Task(Base):
     description = sa.Column(sa.String, nullable=True)
     assignee = sa.Column(sa.String, nullable=False)
     status = sa.Column(ENUM(Status), unique=False, nullable=False, default=Status.ASSIGNED)
+
+
+class Position(enum.Enum):
+    admin = "admin"
+    accounting_clerk = "accounting_clerk"
+    repairman = "repairman"
+    employee = "employee"
+
+
+class User(Base):
+    __tablename__ = "users"
+    public_id = sa.Column(UUID(as_uuid=True), primary_key=True, default=uuid.uuid4)
+    email = sa.Column(sa.String, nullable=False)
+    first_name = sa.Column(sa.String, nullable=True)
+    last_name = sa.Column(sa.String, nullable=True)
+    position = sa.Column(ENUM(Position), unique=False, nullable=False)

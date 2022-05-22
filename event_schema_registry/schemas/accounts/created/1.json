@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
 
-  "title": "Accounts.Created.v2",
+  "title": "Accounts.Created.v1",
   "description": "json schema for CUD account events (version 1)",
 
   "definitions": {
